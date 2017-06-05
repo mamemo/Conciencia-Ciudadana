@@ -1,0 +1,36 @@
+
+<section id="foro">
+    <div class="container">
+<div class="row">
+            <div class="col-lg-12 text-left">
+<h2>Registrarse</h2>
+<br><br>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label "Contraseña" %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> caracteres como mínimo)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+<br>
+  <div class="field">
+    <%= f.label "Confirmación de la Contraseña" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+<br>
+  <div class="actions">
+    <%= f.submit "Registrarse", :class => 'btn btn-default' %> &nbsp;
+    <%= render "devise/shared/links" %>
+  </div>
+<% end %>
+
+</div></div></div></section>
+

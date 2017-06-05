@@ -1,0 +1,6 @@
+
+<% @tema.comentarios.each do |comentario| %>
+	<small>
+	<p><strong><%= comentario.user_id %></strong>: <%= comentario.comentario %></p>
+	</small>
+<% end %>

@@ -1,0 +1,9 @@
+
+<%= form_for([@tema, @tema.comentarios.build]) do |f| %>
+	<p>
+		<%= f.text_area(:comentario, {:class => 'form-control'}) %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>

@@ -1,0 +1,55 @@
+<!-- Page Content -->
+<div class="container post-container">
+
+    <!-- Portfolio Item Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header"><%= @tema.titulo %>
+                <small>Por <%= @tema.user_id %>
+                <br> <%= @tema.created_at %></small>
+            </h1>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Portfolio Item Row -->
+    <div class="row">
+
+            <h3><i class="fa fa-newspaper-o"></i></h3>
+            <p align="justify"><%= @tema.contenido %></p>
+
+    </div>
+    <!-- /.row -->
+
+
+    <div class="row">
+<div class="col-lg-12 text-right">
+            <hr>
+        <%= link_to "Actualizar", edit_tema_path(@tema), :class => 'btn btn-default' %>
+        <%= link_to "Eliminar", tema_path(@tema), method: :delete,
+    data: {confirm: '¿Está seguro?'}, :class => 'btn btn-danger' %>
+</div>
+    </div>
+
+    
+    <!-- Comentarios Row -->
+    <div class="row">
+
+        <div class="col-lg-12">
+            <h3 class="page-header">COMENTARIOS</h3>
+        </div>
+
+        <div class="row">
+
+        <%= render 'comentarios/comentarios' %>
+        <br><br>
+<%= render 'comentarios/form' %>
+
+    </div>
+
+    </div>
+
+    <!-- Related Projects Row -->
+    
+    <!-- /.row -->
+</div>

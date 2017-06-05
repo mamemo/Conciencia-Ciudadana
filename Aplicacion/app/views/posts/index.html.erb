@@ -1,0 +1,75 @@
+<!-- Header -->
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <%= image_tag "Logo.png", class: "img-responsive" %>
+                <div class="intro-text">
+                    <span class="name">Conciencia Ciudadana</span>
+                    <hr class="star-light">
+                    <span class="skills">Herramienta de Democracia Digital</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Portfolio Grid Section -->
+<section id="noticias">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Noticias</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="row">
+                <% @posts.each do |post| %>
+                <div class="col-sm-4 portfolio-item">
+                <%= link_to post_path(post) do %>
+                  <%= image_tag post.image, class: 'img-responsive' %>
+                  <p><small><i class="fa fa-plus"></i> <%= post.title%></small></p>
+                  <p><div class="col-lg-12 text-center">
+                <%= link_to "Leer más", post_path(post), :class => 'btn btn-success' %></p>
+                <% end %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="success" id="acerca">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Acerca de</h2>
+                <hr class="star-light">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-2">
+                <p>Democracia digital es un proyecto que....</p>
+            </div>
+            <div class="col-lg-4">
+                <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
+            </div>
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <a href="https://es.wikipedia.org/wiki/Democracia_digital" class="btn btn-lg btn-outline">
+                    <i class="fa fa-info-circle"></i> Conocer más
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+<div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+    <a class="btn btn-primary" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+</div>
